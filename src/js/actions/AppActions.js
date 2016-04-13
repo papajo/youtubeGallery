@@ -3,7 +3,16 @@ var AppConstants = require('../constants/AppConstants');
 
 var AppActions = {
 		saveVideo: function(video){
-			console.log(video);
+			AppDispatcher.handleViewAction({
+				actionType: AppConstants.SAVE_VIDEO,
+				video: video
+			})
+		},
+		receiveVideos: function(videos) {
+			AppDispatcher.handleViewAction({
+				actionType: AppConstants.RECEIVE_VIDEOS,
+				videos: videos
+			})
 		}
 }
 
