@@ -21,5 +21,9 @@ module.exports = {
 				AppActions.receiveVideos(videos);
 			});
 		})
+	},
+	removeVideo: function(videoId) {
+		this.firebaseRef = new Firebase('https://youtube-gallery.firebaseio.com/videos/' + videoId);
+		this.firebaseRef.remove();
 	}
 }
